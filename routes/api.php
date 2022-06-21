@@ -33,10 +33,13 @@ Route::get('/products/search/{name}', [ProductController::class, 'search']);
 
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
+ Route::get('/product/manage', [ProductController::class, 'manage']);
     Route::post('/products', [ProductController::class, 'store']);
+   
     Route::put('/products/{id}', [ProductController::class, 'update']);
     Route::delete('/products/{id}', [ProductController::class, 'destroy']);
     Route::post('/logout', [AuthController::class, 'logout']);
+  
 });
 
 
