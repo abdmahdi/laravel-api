@@ -34,7 +34,7 @@ class ProductController extends Controller
 
         ]);
         if ($request->hasFile('logo')) {
-            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+            $formFields['logo'] = $request->file('logo')->store('public/uploads/');
         }
 
         $formFields['user_id'] = auth()->id();
@@ -74,7 +74,7 @@ class ProductController extends Controller
         ]);
 
         if ($request->hasFile('logo')) {
-            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+            $formFields['logo'] = $request->file('logo')->store('public/uploads/');
         }
 
 
