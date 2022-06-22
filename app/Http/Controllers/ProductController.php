@@ -74,7 +74,7 @@ class ProductController extends Controller
         ]);
 
         if ($request->hasFile('logo')) {
-            $formFields['logo'] = $request->file('logo')->store('public/uploads/');
+            $formFields['logo'] = $request->file('logo')->store('public/uploads');
         }
 
 
